@@ -44,7 +44,7 @@
         -->
         
         <!-- Fullstory -->
-        
+        <!--
         <script>
             window['_fs_host'] = 'fullstory.com';
             window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
@@ -68,7 +68,7 @@
                 g._v="1.3.0";
             })(window,document,window['_fs_namespace'],'script','user');
         </script>
-        
+        -->
 
         <title>Thesis Test Website</title>
     </head>
@@ -93,32 +93,38 @@
             <input type="text" id="lastName" name="lastName"><br>
             <label for="pass">Password:</label><br>
             <input type="password" id="pass" name="pass">
+            <label for="mail">e-mail:</label><br>
+            <input type="email" id="mail" name="mail">
         </form>
 
         <form>
             <label for="address">Address:</label><br>
             <input type="text" id="address" name="address"><br>
             <label for="mail">e-mail:</label><br>
-            <input type="email" id="mail" name="mail">
+            <input type="email" id="mail_address" name="mail">
         </form>
 
-        <form>
-            <input type="radio" id="1" name="number" value="1">
-            <label for="1">1</label><br>
-            <input type="radio" id="2" name="number" value="2">
-            <label for="2">2</label><br>
-            <input type="radio" id="3" name="number" value="3">
-            <label for="3">3</label>
-        </form>
+        <div id="openShadow">
+            <span>Open Shadow</span>
+            <template shadowrootmode="open">
+                <span>I'm in the open shadow DOM</span>                
+                <label for="pass">Password in Open Shadow:</label><br>
+                <input type="password" id="pass_open" name="pass">
+            </template>
+        </div>
+
+        <div id="closedShadow">
+            <span>Closed Shadow</span>
+            <template shadowrootmode="closed">
+                <span>I'm in the closed shadow DOM</span>                
+                <label for="pass">Password in Closed Shadow:</label><br>
+                <input type="password" id="pass_closed" name="pass">
+            </template>
+        </div>
 
         <form>
             <label for="comment">Comment:</label><br>
             <input type="text" id="comment" name="comment">
-        </form>
-
-        <form>
-            <input type="checkbox" id="check" name="check" value="Checbox">
-            <label for="check"> Checkbox</label><br>
         </form>
     </body>
 </html>
