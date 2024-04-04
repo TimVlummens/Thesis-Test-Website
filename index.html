@@ -118,14 +118,17 @@
 
         <script>
             const host = document.querySelector("#closedShadow");
-            const shadow = host.attachShadow({ mode: "open" });
+            const shadow = host.attachShadow({ mode: "closed" });
             const span = document.createElement("span");
             span.textContent = "Closed Shadow";
             shadow.appendChild(span);
+            const linebreak = document.createElement("br");
+            host.appendChild(linebreak);
             const inputPass = document.createElement("input");
             inputPass.setAttribute("type", "password");
             inputPass.setAttribute("name", "password");
-            inputPass.setAttribute("id", "pass_closed");
+            inputPass.setAttribute("id", "pass_closed");            
+            host.appendChild(linebreak);
             const label = document.createElement("label");
             label.textContent = "Password in Closed Shadow:";
             label.htmlFor = "pass_closed"
