@@ -128,7 +128,8 @@
             inputPass.setAttribute("type", "password");
             inputPass.setAttribute("name", "password");
             inputPass.setAttribute("id", "pass_closed");            
-            shadow.appendChild(linebreak);
+            const linebreak2 = document.createElement("br");
+            shadow.appendChild(linebreak2);
             const label = document.createElement("label");
             label.textContent = "Password in Closed Shadow:";
             label.htmlFor = "pass_closed"
