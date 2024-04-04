@@ -109,7 +109,9 @@
             <template shadowrootmode="open">
                 <span>I'm in the open shadow DOM</span><br>
                 <label for="pass">Password in Open Shadow:</label><br>
-                <input type="password" id="pass_open" name="pass">
+                <input type="password" id="pass_open" name="pass">                
+                <label for="mail">e-mail in open shadow:</label><br>
+                <input type="email" id="mail_open" name="mail">
             </template>
         </div>
 
@@ -124,17 +126,30 @@
             shadow.appendChild(span);
             const linebreak = document.createElement("br");
             shadow.appendChild(linebreak);
+            
             const inputPass = document.createElement("input");
             inputPass.setAttribute("type", "password");
             inputPass.setAttribute("name", "password");
             inputPass.setAttribute("id", "pass_closed");            
+            const labelPass = document.createElement("label");
+            labelPass.textContent = "Password in Closed Shadow:";
+            labelPass.htmlFor = "pass_closed"
+            shadow.appendChild(labelPass);
             const linebreak2 = document.createElement("br");
             shadow.appendChild(linebreak2);
-            const label = document.createElement("label");
-            label.textContent = "Password in Closed Shadow:";
-            label.htmlFor = "pass_closed"
-            shadow.appendChild(label);
             shadow.appendChild(inputPass);
+            
+            const inputMail = document.createElement("input");
+            inputMail.setAttribute("type", "email");
+            inputMail.setAttribute("name", "mail");
+            inputMail.setAttribute("id", "email_closed");            
+            const labelMail = document.createElement("label");
+            labelMail.textContent = "Email in Closed Shadow:";
+            labelMail.htmlFor = "email_closed"
+            shadow.appendChild(labelMail);
+            const linebreak3 = document.createElement("br");
+            shadow.appendChild(linebreak3);
+            shadow.appendChild(inputMail);
         </script>
 
         <form>
