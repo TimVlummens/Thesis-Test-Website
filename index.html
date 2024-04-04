@@ -114,13 +114,24 @@
         </div>
 
         <div id="closedShadow">
-            <span>Closed Shadow</span>
-            <template shadowrootmode="closed">
-                <span>I'm in the closed shadow DOM</span><br>
-                <label for="pass">Password in Closed Shadow:</label><br>
-                <input type="password" id="pass_closed" name="pass">
-            </template>
         </div>
+
+        <script>
+            const host = document.querySelector("#closedShadow");
+            const shadow = host.attachShadow({ mode: "open" });
+            const span = document.createElement("span");
+            span.textContent = "Closed Shadow";
+            shadow.appendChild(span);
+            const inputPass = document.createElement("input");
+            inputPass.setAttribute("type", "password");
+            inputPass.setAttribute("name", "password");
+            inputPass.setAttribute("id", "pass_closed");
+            const label = document.createElement("label");
+            label.textContent = "Password in Closed Shadow:";
+            label.htmlFor = "pass_closed"
+            shadow.appendChild(label);
+            shadow.appendChild(inputPass);
+        </script>
 
         <form>
             <label for="comment">Comment:</label><br>
