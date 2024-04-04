@@ -109,7 +109,7 @@
             <template shadowrootmode="open">
                 <span>I'm in the open shadow DOM</span><br>
                 <label for="pass">Password in Open Shadow:</label><br>
-                <input type="password" id="pass_open" name="pass">                
+                <input type="password" id="pass_open" name="pass"><br>
                 <label for="mail">e-mail in open shadow:</label><br>
                 <input type="email" id="mail_open" name="mail">
             </template>
@@ -137,7 +137,9 @@
             shadow.appendChild(labelPass);
             const linebreak2 = document.createElement("br");
             shadow.appendChild(linebreak2);
-            shadow.appendChild(inputPass);
+            shadow.appendChild(inputPass);            
+            const linebreak3 = document.createElement("br");
+            shadow.appendChild(linebreak3);
             
             const inputMail = document.createElement("input");
             inputMail.setAttribute("type", "email");
@@ -147,8 +149,8 @@
             labelMail.textContent = "Email in Closed Shadow:";
             labelMail.htmlFor = "email_closed"
             shadow.appendChild(labelMail);
-            const linebreak3 = document.createElement("br");
-            shadow.appendChild(linebreak3);
+            const linebreak4 = document.createElement("br");
+            shadow.appendChild(linebreak4);
             shadow.appendChild(inputMail);
         </script>
 
